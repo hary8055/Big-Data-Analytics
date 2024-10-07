@@ -1,6 +1,8 @@
 # Big-Data-Analytics
 In this repository I am showcasing sample big data analytics in hadoop using docker containerization.
 
+## Setting up Hadoop
+
 1. I am using Macbook m1 with arm64 architechture, so I used this hadoop image :
 ```
 
@@ -46,4 +48,32 @@ Note: To restart the container ( ``` docker exec -it bigtools bash ```)
 
     ```
     Note : You can monitor the upload by accesing HDFS Web interface at (http://localhost:50070)
+
+## MapReduce 
+
+1. Inside a directory for scripts create mapper.py and reducer.py using ``` touch ```
+2. Change the permissions of both files:
+   ```
+
+   chmod 777 mapper.py reducer.py
+
+   ```
+3. The mapper and reducer for this job is available in this repository
+4. Submitting the mapreduce job to YARN:
+   ```
+   hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar \
+  -input /home/datasrc/bigDataTask/trips.csv \
+  -output /home/datasrc/output_avg_price_by_cabin_final \
+  -mapper "python3 /home/datasrc/scripts/mapper.py" \
+  -reducer "python3 /home/datasrc/scripts/reducer.py"
+
+  ```
+  Note: Specify the python version in your code.
+  Monitor job specific details using YARN web interface at (http://localhost:8080)
+5. To retrieve the results:
+   ```
+   hadoop fs -cat /home/dataout/part-00000
+
+   ```
+
    
