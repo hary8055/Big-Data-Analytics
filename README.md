@@ -70,7 +70,7 @@ Note: To restart the container ( ``` docker exec -it bigtools bash ```)
    
   ```
 
-     Note: Specify the python version in your code.
+     **Note**: Specify the python version in your code.
      Monitor job specific details using YARN web interface at (http://localhost:8080)
 5. To retrieve the results: ``` hadoop fs -cat /home/dataout/part-00000 ```
 
