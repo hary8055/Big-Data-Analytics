@@ -61,6 +61,7 @@ Note: To restart the container ( ``` docker exec -it bigtools bash ```)
 3. The mapper and reducer for this job is available in this repository
 4. Submitting the mapreduce job to YARN:
    ```
+   
    hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar \
      -input /home/datasrc/bigDataTask/trips.csv \
      -output /home/datasrc/output_avg_price_by_cabin_final \
