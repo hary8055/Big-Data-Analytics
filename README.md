@@ -68,8 +68,10 @@ Note: To restart the container ( ``` docker exec -it bigtools bash ```)
   -reducer "python3 /home/datasrc/scripts/reducer.py"
 
   ```
+
   Note: Specify the python version in your code.
   Monitor job specific details using YARN web interface at (http://localhost:8080)
+
 5. To retrieve the results:
    ```
    hadoop fs -cat /home/dataout/part-00000
