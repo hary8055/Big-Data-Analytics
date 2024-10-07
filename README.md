@@ -45,5 +45,5 @@ Note: To restart the container ( ``` docker exec -it bigtools bash ```)
     hadoop fs -put Trips.csv /home/datasrc/bigDataTask
 
     ```
-    Note : You can monitor the upload by accesing HDFS Web interface at ``` (http://localhost:50070) ```
+    Note : You can monitor the upload by accesing HDFS Web interface at (http://localhost:50070)
    
