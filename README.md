@@ -62,15 +62,15 @@ Note: To restart the container ( ``` docker exec -it bigtools bash ```)
 4. Submitting the mapreduce job to YARN:
    ```
    hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar \
-  -input /home/datasrc/bigDataTask/trips.csv \
-  -output /home/datasrc/output_avg_price_by_cabin_final \
-  -mapper "python3 /home/datasrc/scripts/mapper.py" \
-  -reducer "python3 /home/datasrc/scripts/reducer.py"
+     -input /home/datasrc/bigDataTask/trips.csv \
+     -output /home/datasrc/output_avg_price_by_cabin_final \
+     -mapper "python3 /home/datasrc/scripts/mapper.py" \
+     -reducer "python3 /home/datasrc/scripts/reducer.py"
 
   ```
 
-  Note: Specify the python version in your code.
-  Monitor job specific details using YARN web interface at (http://localhost:8080)
+     Note: Specify the python version in your code.
+     Monitor job specific details using YARN web interface at (http://localhost:8080)
 
 5. To retrieve the results:
    ```
